@@ -1,0 +1,24 @@
+{
+  "name": "metaer/curl-wrapper-bundle",
+  "type": "application",
+  "description": "Curl wrapper bundle",
+  "keywords": ["curl"],
+  "homepage": "https://github.com/metaer/curl-wrapper-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pavel Popov"
+    }
+  ],
+  "require": {
+    "php": ">=7.0"
+  },
+  "autoload": {
+    "psr-4": { "Metaer\\CurlWrapperBundle\\": "" }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "master"
+    }
+  }
+}
