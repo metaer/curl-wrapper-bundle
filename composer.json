@@ -15,10 +15,5 @@
   },
   "autoload": {
     "psr-4": { "Metaer\\CurlWrapperBundle\\": "" }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "master"
-    }
   }
 }
