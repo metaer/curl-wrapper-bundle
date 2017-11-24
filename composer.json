@@ -1,0 +1,29 @@
+{
+  "name": "metaer/curl-wrapper-bundle",
+  "type": "symfony-bundle",
+  "description": "Curl wrapper bundle",
+  "keywords": ["curl"],
+  "homepage": "https://github.com/metaer/curl-wrapper-bundle",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Pavel Popov"
+    }
+  ],
+  "require": {
+    "php": ">=7.0",
+    "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0 || ^5.0",
+    "ext-curl": "*"
+  },
+  "autoload": {
+    "psr-4": { "Metaer\\CurlWrapperBundle\\": "" }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Metaer\\CurlWrapperBundle\\Tests\\": "tests/"
+    }
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^4.2"
+  }
+}
