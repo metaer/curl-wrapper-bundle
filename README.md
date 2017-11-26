@@ -10,6 +10,12 @@ composer require metaer/curl-wrapper-bundle
 Basic Usage:
 ---
 ``` php
+$options = [
+            CURLOPT_URL => 'http://example.ex'
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POSTFIELDS => 'example',
+        ];
+        
 $cw = $this->get('metaer_curl_wrapper.curl_wrapper');
 
 try{
