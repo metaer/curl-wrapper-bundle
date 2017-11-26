@@ -6,8 +6,9 @@ Install:
 ---
 * composer require metaer/curl-wrapper-bundle
 * add to AppKernel.php:
-<br>
-new \Metaer\CurlWrapperBundle\MetaerCurlWrapperBundle(),
+``` php 
+new \Metaer\CurlWrapperBundle\MetaerCurlWrapperBundle()
+```
 
 
 Basic Usage:
