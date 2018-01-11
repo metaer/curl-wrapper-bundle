@@ -1,6 +1,3 @@
-parameters:
-    metaer_curl_wrapper.class: Metaer\CurlWrapperBundle\CurlWrapper
-
 services:
     metaer_curl_wrapper.curl_wrapper:
-        class: '%metaer_curl_wrapper.class%'
+        class: '%metaer_curl_wrapper.main_class%'
