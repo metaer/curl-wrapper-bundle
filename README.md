@@ -15,7 +15,7 @@ Basic Usage:
 ---
 ``` php
 $options = [
-            CURLOPT_URL => 'http://example.ex'
+            CURLOPT_URL => 'http://example.ex',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_POSTFIELDS => 'example',
         ];
