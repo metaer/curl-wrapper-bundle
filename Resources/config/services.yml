@@ -1,4 +1,3 @@
 services:
     metaer_curl_wrapper.curl_wrapper.default:
         class: 'Metaer\CurlWrapperBundle\CurlWrapper'
-        public: false
