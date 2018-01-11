@@ -22,7 +22,7 @@ class Configuration implements ConfigurationInterface
 
         $rootNode
             ->children()
-            ->scalarNode('wrapper')->isRequired()->end();
+                ->scalarNode('wrapper')->defaultValue('metaer_curl_wrapper.curl_wrapper.default')->end();
 
         // Here you should define the parameters that are allowed to
         // configure your bundle. See the documentation linked above for
