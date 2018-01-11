@@ -9,7 +9,7 @@
 namespace Metaer\CurlWrapperBundle;
 
 
-class CurlWrapper
+class CurlWrapper implements CurlWrapperInterface
 {
     private $requestUrl;
     private $requestBody;
