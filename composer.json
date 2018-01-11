@@ -1,6 +1,6 @@
 {
   "name": "metaer/curl-wrapper-bundle",
-  "type": "application",
+  "type": "symfony-bundle",
   "description": "Curl wrapper bundle",
   "keywords": ["curl"],
   "homepage": "https://github.com/metaer/curl-wrapper-bundle",
