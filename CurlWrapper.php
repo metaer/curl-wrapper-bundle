@@ -20,7 +20,7 @@ class CurlWrapper
      * @return mixed
      * @throws CurlWrapperException
      */
-    public function getQueryResult($curlOptions) {
+    public function getQueryResult(array $curlOptions) {
         $ch = curl_init();
 
         foreach ($curlOptions as $key => $value) {
