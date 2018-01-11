@@ -22,6 +22,8 @@ class MetaerCurlWrapperExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+        $container->setAlias('metaer_curl_wrapper.curl_wrapper', $config['service']['wrapper']);
+
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
     }

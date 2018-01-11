@@ -1,3 +1,4 @@
 services:
-    metaer_curl_wrapper.curl_wrapper:
-        class: '%metaer_curl_wrapper.main_class%'
+    metaer_curl_wrapper.curl_wrapper.default:
+        class: 'Metaer\CurlWrapperBundle\CurlWrapper'
+        public: false
