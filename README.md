@@ -31,13 +31,14 @@ try{
 
 How simply change service behaviour or extend
 ---
-Symfony 4 example
+Symfony-4 example
 ``` yaml
 # config/packages/metaer_curl_wrapper.yaml
 metaer_curl_wrapper:
     wrapper: custom_curl_wrapper
 ```
 ``` yaml
+# services.yaml
 services:
     # your services
     #...
@@ -67,3 +68,14 @@ class MyCurlWrapper extends CurlWrapper
 ```
 
 So, you do not need copy-paste full class code. Only methods which you want change.
+Another way to do the same thing:
+
+``` yaml
+# services.yaml
+services:
+    # your services
+    #...
+    
+    metaer_curl_wrapper.curl_wrapper:
+        class: 'App\MyCurlWrapper'
+```
