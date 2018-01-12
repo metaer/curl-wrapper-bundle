@@ -24,7 +24,6 @@ class MetaerCurlWrapperExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
-
         $container->setAlias(self::ALIAS_ID, $config['wrapper']);
         $container->getAlias(self::ALIAS_ID)->setPrivate(false);
 
