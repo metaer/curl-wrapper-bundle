@@ -17,7 +17,6 @@ Basic Usage:
 $options = [
             CURLOPT_URL => 'http://example.ex',
             CURLOPT_RETURNTRANSFER => true,
-            CURLOPT_POSTFIELDS => 'example',
         ];
         
 $cw = $this->get('metaer_curl_wrapper.curl_wrapper');
