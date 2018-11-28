@@ -28,6 +28,15 @@ try{
 }
 ```
 
+Basic Usage with autowire:
+---
+Just add in services.yaml
+``` yaml
+# services.yaml
+services:
+    Metaer\CurlWrapperBundle\CurlWrapper: "@metaer_curl_wrapper.curl_wrapper"
+```
+
 How simply change service behaviour or extend
 ---
 Symfony-4 example
