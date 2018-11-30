@@ -2,9 +2,11 @@ Curl wrapper bundle
 ===
 Curl Wrapper bundle for symfony framework
 
-Install:
+Installation
 ---
-* composer require metaer/curl-wrapper-bundle
+``` sh
+composer require metaer/curl-wrapper-bundle
+```
 
 If you use Symfony 2 or 3 (without symfony flex): add to AppKernel.php:
 ``` php 
