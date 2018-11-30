@@ -5,7 +5,8 @@ Curl Wrapper bundle for symfony framework
 Install:
 ---
 * composer require metaer/curl-wrapper-bundle
-* if you use Symfony 2 or 3 (without symfony flex): add to AppKernel.php:
+
+If you use Symfony 2 or 3 (without symfony flex): add to AppKernel.php:
 ``` php 
 new \Metaer\CurlWrapperBundle\MetaerCurlWrapperBundle(),
 ```
