@@ -56,16 +56,19 @@ class MyService
         $this->curlWrapper = $curlWrapper;
     }
     
-    $options = [
-        CURLOPT_URL => 'http://example.ex',
-        CURLOPT_RETURNTRANSFER => true,
-    ];
+    public function myMethod() {    
+        $options = [
+            CURLOPT_URL => 'http://example.ex',
+            CURLOPT_RETURNTRANSFER => true,
+        ];
 
-    try{
-        $result = $this->curlWrapper->getQueryResult($options);
-    } catch (CurlWrapperException $e) {
-        //handle exception
+        try{
+            $result = $this->curlWrapper->getQueryResult($options);
+        } catch (CurlWrapperException $e) {
+            //handle exception
+        }
     }
+}
 ```
 
 How simply change service behaviour or extend
