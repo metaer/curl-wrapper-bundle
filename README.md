@@ -24,10 +24,31 @@ $options = [
         
 $cw = $this->get('metaer_curl_wrapper.curl_wrapper');
 
-try{
+try {
     $result = $cw->getQueryResult($options);
 } catch (CurlWrapperException $e) {
     //handle exception
+}
+```
+
+Basic usage with controllers action argument:
+---
+``` php
+MyController {
+    public function myAction(CurlWrapper $curlWrapper) {    
+        $options = [
+            CURLOPT_URL => 'http://example.ex',
+            CURLOPT_RETURNTRANSFER => true,
+        ];
+
+        try {
+            $result = $curlWrapper->getQueryResult($options);
+        } catch (CurlWrapperException $e) {
+            //handle exception
+        }
+        
+        return new Response('something');
+    }
 }
 ```
 
@@ -62,7 +83,7 @@ class MyService
             CURLOPT_RETURNTRANSFER => true,
         ];
 
-        try{
+        try {
             $result = $this->curlWrapper->getQueryResult($options);
         } catch (CurlWrapperException $e) {
             //handle exception
@@ -109,7 +130,7 @@ class MyCurlWrapper extends CurlWrapper
 }
 ```
 
-So, you do not need copy-paste full class code. Only methods which you want change.
+So, you do not need copy-paste full class code. Only methods which you want change.</br></br>
 Another way to do the same thing:
 
 ``` yaml
@@ -120,4 +141,13 @@ services:
     
     metaer_curl_wrapper.curl_wrapper:
         class: 'App\MyCurlWrapper'
+```
+
+See also
+---
+You can also use methods
+```
+CurlWrapper::getResponseBody
+CurlWrapper::getRequestBody
+CurlWrapper::getRequestUrl
 ```
