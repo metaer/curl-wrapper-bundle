@@ -1,3 +1,5 @@
 services:
     metaer_curl_wrapper.curl_wrapper.default:
         class: 'Metaer\CurlWrapperBundle\CurlWrapper'
+
+    Metaer\CurlWrapperBundle\CurlWrapper: "@metaer_curl_wrapper.curl_wrapper.default"
