@@ -18,9 +18,9 @@ Basic Usage:
 ---
 ``` php
 $options = [
-            CURLOPT_URL => 'http://example.ex',
-            CURLOPT_RETURNTRANSFER => true,
-        ];
+    CURLOPT_URL => 'http://example.ex',
+    CURLOPT_RETURNTRANSFER => true,
+];
         
 $cw = $this->get('metaer_curl_wrapper.curl_wrapper');
 
@@ -31,17 +31,41 @@ try{
 }
 ```
 
-Basic Usage with autowire:
+Basic Usage with autowire in another service:
 ---
-Just add in services.yaml
-``` yaml
-# services.yaml
-services:
-    # your services
-    #...
+``` php
+<?php
+namespace App\Service;
+
+use Metaer\CurlWrapperBundle\CurlWrapper;
+use Metaer\CurlWrapperBundle\CurlWrapperException;
+
+class MyService
+{
+    /**
+     * @var CurlWrapper
+     */
+    private $curlWrapper;
     
-    #alias for metaer_curl_wrapper.curl_wrapper
-    Metaer\CurlWrapperBundle\CurlWrapper: "@metaer_curl_wrapper.curl_wrapper"
+    /**
+     * MyService constructor.
+     * @param CurlWrapper $curlWrapper
+     */
+    public function __construct(CurlWrapper $curlWrapper)
+    {
+        $this->curlWrapper = $curlWrapper;
+    }
+    
+    $options = [
+        CURLOPT_URL => 'http://example.ex',
+        CURLOPT_RETURNTRANSFER => true,
+    ];
+
+    try{
+        $result = $this->curlWrapper->getQueryResult($options);
+    } catch (CurlWrapperException $e) {
+        //handle exception
+    }
 ```
 
 How simply change service behaviour or extend
