@@ -152,3 +152,16 @@ CurlWrapper::getResponseBody
 CurlWrapper::getRequestBody
 CurlWrapper::getRequestUrl
 ```
+Timeouts settings
+---
+```php
+$connectionTimeout = 8; //seconds
+$serverResponseTimeout = 20; //seconds
+
+$options = [
+    CURLOPT_CONNECTTIMEOUT => $connectionTimeout,
+    //another options
+];
+
+$cw->getQueryResult($options, $serverResponseTimeout)
+```
