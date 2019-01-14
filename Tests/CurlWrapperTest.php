@@ -17,7 +17,6 @@ class CurlWrapperTest extends TestCase
 
     public function testSuccessRequest() {
         $result = $this->makeRequest(self::GOOD_URL);
-        echo $result;
         $this->assertTrue(strpos($result, 'html') !== false);
     }
 
