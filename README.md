@@ -152,10 +152,10 @@ $serverResponseTimeout = 20; //seconds
 
 $options = [
     CURLOPT_CONNECTTIMEOUT => $connectionTimeout,
-    //another options
+    CURLOPT_TIMEOUT => $serverResponseTimeout,
 ];
 
-$cw->getQueryResult($options, $serverResponseTimeout)
+$cw->getQueryResult($options)
 ```
 See also
 ---

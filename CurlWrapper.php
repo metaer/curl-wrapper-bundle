@@ -14,16 +14,10 @@ class CurlWrapper implements CurlWrapperInterface
 
     /**
      * @param array $curlOptions
-     * @param int|null $serverResponseTimeout
      * @return mixed
      * @throws CurlWrapperException
      */
-    public function getQueryResult(array $curlOptions, int $serverResponseTimeout = null) {
-        if ($serverResponseTimeout !== null) {
-            $oldSocketTimeout = ini_get("default_socket_timeout");
-            ini_set("default_socket_timeout", $serverResponseTimeout);
-        }
-
+    public function getQueryResult(array $curlOptions) {
         $ch = curl_init();
 
         foreach ($curlOptions as $key => $value) {
@@ -38,10 +32,6 @@ class CurlWrapper implements CurlWrapperInterface
         $result = curl_exec($ch);
         $curlErrorCode = curl_errno($ch);
         curl_close($ch);
-
-        if (isset($oldSocketTimeout)) {
-            ini_set("default_socket_timeout", $oldSocketTimeout);
-        }
 
         if ($curlErrorCode) {
             $errorMessage = $this->getText($curlErrorCode);
