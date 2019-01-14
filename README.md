@@ -8,6 +8,7 @@ Installation
 composer require metaer/curl-wrapper-bundle
 ```
 
+If you use Symfony 4 with symfony flex - that's all</br>
 If you use Symfony 2 or 3 (without symfony flex), add to AppKernel.php:
 ``` php 
 new \Metaer\CurlWrapperBundle\MetaerCurlWrapperBundle(),
