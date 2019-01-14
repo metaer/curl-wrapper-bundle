@@ -144,14 +144,6 @@ services:
         class: 'App\MyCurlWrapper'
 ```
 
-See also
----
-You can also use methods
-```
-CurlWrapper::getResponseBody
-CurlWrapper::getRequestBody
-CurlWrapper::getRequestUrl
-```
 Timeouts settings
 ---
 ```php
@@ -164,4 +156,12 @@ $options = [
 ];
 
 $cw->getQueryResult($options, $serverResponseTimeout)
+```
+See also
+---
+You can also use methods
+```
+CurlWrapper::getResponseBody
+CurlWrapper::getRequestBody
+CurlWrapper::getRequestUrl
 ```
