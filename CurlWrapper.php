@@ -65,7 +65,7 @@ class CurlWrapper implements CurlWrapperInterface
     {
         return [
             '2' => 'Curl lib initialization error',
-            '7' => 'Can not connect host',
+            '7' => 'Can not connect to host',
             '28' => 'Server response timeout limit exceeded',
         ];
     }
