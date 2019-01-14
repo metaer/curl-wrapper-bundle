@@ -17,6 +17,8 @@
   },
   "autoload": {
     "psr-4": { "Metaer\\CurlWrapperBundle\\": "" }
+  },
+  "require-dev": {
+    "symfony/phpunit-bridge": "^4.2"
   }
 }
-
