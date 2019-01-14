@@ -12,9 +12,11 @@
   ],
   "require": {
     "php": ">=7.0",
-    "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0"
+    "symfony/framework-bundle": "^2.7 || ^3.0 || ^4.0",
+    "ext-curl": "*"
   },
   "autoload": {
     "psr-4": { "Metaer\\CurlWrapperBundle\\": "" }
   }
 }
+

@@ -1,9 +1,6 @@
 <?php
 /**
- * Created by PhpStorm.
- * User: pavel
- * Date: 19.10.17
- * Time: 19:28
+ * Created by Pavel Popov.
  */
 
 namespace Metaer\CurlWrapperBundle;
@@ -49,27 +46,27 @@ class CurlWrapper implements CurlWrapperInterface
     {
         $code = (string)$code;
         $docDescriptions = $this->errorsDescFromDoc();
-        $russianDescriptions = $this->getRussianDescriptions();
+        $customDetailedDescriptions = $this->getCustomDetailedDescriptions();
 
-        $message = sprintf('Произошла ошибка. Код ошибки: %s. ', $code);
+        $message = sprintf('An error has occurred. Error code: %s. ', $code);
 
         if (array_key_exists($code, $docDescriptions)) {
             $message .= $docDescriptions[$code] . '. ';
         }
 
-        if (array_key_exists($code, $russianDescriptions)) {
-            $message .= $russianDescriptions[$code] . '.';
+        if (array_key_exists($code, $customDetailedDescriptions)) {
+            $message .= $customDetailedDescriptions[$code] . '.';
         }
 
         return $message;
     }
 
-    private function getRussianDescriptions()
+    private function getCustomDetailedDescriptions()
     {
         return [
-            '2' => 'Ошибка инициализации curl',
-            '7' => 'Не удалось установить соединение с сервером',
-            '28' => 'Превышен лимит ожидания ответа от сервера',
+            '2' => 'Curl lib initialization error',
+            '7' => 'Can not connect host',
+            '28' => 'Server response timeout limit exceeded',
         ];
     }
 
