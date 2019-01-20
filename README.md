@@ -33,6 +33,41 @@ try {
 }
 ```
 
+Basic usage with injection into your controller:
+---
+``` php
+MyController {
+    /**
+     * @var CurlWrapper
+     */
+    private $curlWrapper;
+
+    /**
+     * MyController constructor.
+     * @param CurlWrapper $curlWrapper
+     */
+    public function __construct(CurlWrapper $curlWrapper)
+    {
+        $this->curlWrapper = $curlWrapper;
+    }
+    
+    public function myAction() {    
+        $options = [
+            CURLOPT_URL => 'http://example.ex',
+            CURLOPT_RETURNTRANSFER => true,
+        ];
+
+        try {
+            $this->curlWrapper->getQueryResult($options);
+        } catch (CurlWrapperException $e) {
+            //handle exception
+        }
+        
+        return new Response('something');
+    }
+}
+```
+
 Basic usage with controllers action argument:
 ---
 ``` php
