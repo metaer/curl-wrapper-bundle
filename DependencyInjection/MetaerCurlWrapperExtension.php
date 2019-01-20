@@ -4,7 +4,6 @@ namespace Metaer\CurlWrapperBundle\DependencyInjection;
 
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\Config\FileLocator;
-use Symfony\Component\DependencyInjection\Definition;
 use Symfony\Component\HttpKernel\DependencyInjection\Extension;
 use Symfony\Component\DependencyInjection\Loader;
 
@@ -19,13 +18,21 @@ class MetaerCurlWrapperExtension extends Extension
 
     /**
      * {@inheritdoc}
+     * @throws \Exception
      */
     public function load(array $configs, ContainerBuilder $container)
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setAlias(self::ALIAS_ID, $config['wrapper']);
-        $container->getAlias(self::ALIAS_ID)->setPrivate(false);
+
+        $alias = $container->getAlias(self::ALIAS_ID);
+
+        if (method_exists($alias, 'setPrivate')) {
+            $alias->setPrivate(false);
+        } else {
+            $alias->setPublic(true);
+        }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.yml');
