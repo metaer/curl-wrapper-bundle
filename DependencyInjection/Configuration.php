@@ -18,7 +18,7 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder('metaer_curl_wrapper');
-        $rootNode = $treeBuilder->getRootNode();
+        $rootNode = method_exists(TreeBuilder::class, 'getRootNode') ? $treeBuilder->getRootNode() : $treeBuilder->root('metaer_curl_wrapper');
 
         $rootNode
             ->children()
