@@ -68,21 +68,6 @@ MyController {
 }
 ```
 
-If you use autowire with old symfony versions and get such error:
-```
-Cannot autowire service "your_service": argument "$curlWrapper" of method "YourService::__construct()" references class "Metaer\CurlWrapperBundle\CurlWrapper" but no such service exists. It cannot be auto-registered because it is from a different root namespace.
-```
-just add to your services.yml:
-```
-# services.yaml
-services:
-    # your services
-    #...
-    
-    Metaer\CurlWrapperBundle\CurlWrapper:
-        class: Metaer\CurlWrapperBundle\CurlWrapper
-```
-
 Basic usage with controllers action argument:
 ---
 ``` php
