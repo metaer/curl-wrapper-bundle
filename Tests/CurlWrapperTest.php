@@ -22,7 +22,7 @@ class CurlWrapperTest extends TestCase
 
     public function testErrorRequest() {
         $result = $this->makeRequest(self::BAD_URL);
-        $this->assertTrue(strpos($result, 'An error has occurred') !== false);
+        $this->assertTrue(strpos($result, 'Curl error code') !== false);
     }
 
     private function makeRequest($url)
