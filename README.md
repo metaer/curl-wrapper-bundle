@@ -27,7 +27,7 @@ $options = [
     CURLOPT_RETURNTRANSFER => true,
 ];
         
-$cw = $this->get('metaer_curl_wrapper.curl_wrapper');
+$cw = $container->get('metaer_curl_wrapper.curl_wrapper');
 
 try {
     $result = $cw->getQueryResult($options);
