@@ -20,7 +20,6 @@ new \Metaer\CurlWrapperBundle\MetaerCurlWrapperBundle(),
 
 Basic Usage
 ---
-If your Controller extends Symfony\Bundle\FrameworkBundle\Controller\Controller (which is deprecated since Symfony 4.2) you can use such code
 ``` php
 $options = [
     CURLOPT_URL => 'http://example.ex',
