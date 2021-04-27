@@ -28,10 +28,10 @@ class MetaerCurlWrapperExtension extends Extension
 
         $alias = $container->getAlias(self::ALIAS_ID);
 
-        if (method_exists($alias, 'setPrivate')) {
-            $alias->setPrivate(false);
-        } else {
+        if (method_exists($alias, 'setPublic')) {
             $alias->setPublic(true);
+        } else {
+            $alias->setPrivate(false);
         }
 
         $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
